@@ -59,12 +59,12 @@ CSS STRUCTURE:
 /** 1. VARIABLES
 --------------------------------------------------------------*/
 :root {
-  --primary-color: #3EA7B2;
-  --secondary-color: #BA9C8B;
+  --primary-color: #D16806;
+  --secondary-color: #F9F6F3;
   --black-color: #1A1A1A;
   --dark-color: #353535;
-  --primary-color-200: #87D5DD;
-  --primary-color-400: #69C5CF;
+  --primary-color-200: #E8F0F1;
+  --primary-color-400: #c4e9ed;
   --gray-color: #777F81;
   --light-color: #fdfdfd;
 
