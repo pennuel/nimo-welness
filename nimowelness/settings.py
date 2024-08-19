@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-(#38w_-+u)%^yug-s*@&#710azp--50v84rlomx92tmc$do#u6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -71,17 +71,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'nimowelness.wsgi.application'
 
-STATICFILES_DIRS = [BASE_DIR / "static",]
+# STATICFILES_DIRS = [BASE_DIR / "static",]
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
