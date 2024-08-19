@@ -4,12 +4,12 @@
   <section id="slider" data-aos="fade-up">
     <div class="container-fluid padding-side" >
       <div class="d-flex rounded-5"
-        style="background-image: url(images/slider-image1.jpg); background-size: cover; background-repeat: no-repeat; height: 50vh; background-position: center;">
+        style="background-image: url('/static/images/slider-image1.jpg'); background-size: cover; background-repeat: no-repeat; height: 50vh; background-position: center;">
           <div class="row align-items-center m-auto">
             <div class="d-flex flex-wrap flex-column justify-content-center align-items-center">
               <h2 class="display-1 fw-normal">Contact</h2>
               <nav class="breadcrumb">
-                <a class="breadcrumb-item" href="index.html">Home</a>
+                <a class="breadcrumb-item" href="{% url 'home' %}">Home</a>
                 <span class="breadcrumb-item active" aria-current="page">Contact</span>
               </nav>
             </div>
@@ -24,7 +24,8 @@
         <div class="inquiry-item col-lg-6 mb-5">
           <h4 class="display-6 fw-normal my-3">Got any questions?</h4>
           <p>Use the form below to get in touch with us.</p>
-          <form id="contactForm" action="contact.php" method="post" class="form-group contact-form mt-4">
+          <form id="contactForm"  method="post" class="form-group contact-form mt-4">
+              {% csrf_token %}
             <div class="form-input col-lg-12 d-flex justify-content-between mb-3">
               <div class="w-100 me-3">
                 <label class="mb-2 fs-6 text-dark">Your Name*</label>
@@ -63,7 +64,10 @@
         </div>
         <div class="contact-info col-lg-6 mb-5">
           <h4 class="display-6 fw-normal my-3">Contact information</h4>
-          <p>Tortor dignissim convallis aenean et tortor at risus viverra adipiscing.</p>
+          <p>We’re here to help you embark on your transformative journey. Whether you have questions about our retreats, need assistance with booking, or simply want to learn more about what we offer, we’d love to hear from you.
+          </p>
+            <p>
+              Reach out to us, and let’s start a conversation about how we can support your path to wellness and personal growth.</p>
           <div class="page-content">
             <div class="col-md-6">
               <div class="content-box my-5">

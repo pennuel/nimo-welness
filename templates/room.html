@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
 
 {% block content %}
   <section id="slider" data-aos="fade-up">
@@ -6,10 +7,10 @@
         style="background-image: url(images/slider-image1.jpg); background-size: cover; background-repeat: no-repeat; height: 50vh; background-position: center;">
           <div class="row align-items-center m-auto">
             <div class="d-flex flex-wrap flex-column justify-content-center align-items-center">
-              <h2 class="display-1 fw-normal">Rooms</h2>
+              <h2 class="display-1 fw-normal">Retreats</h2>
               <nav class="breadcrumb">
                 <a class="breadcrumb-item" href="index.html">Home</a>
-                <span class="breadcrumb-item active" aria-current="page">Rooms</span>
+                <span class="breadcrumb-item active" aria-current="page">Retreats</span>
               </nav>
             </div>
           </div>
@@ -22,6 +23,7 @@
       <div class="row">
         <main class="post-list post-card-small">
           <div class="row g-lg-5">
+{#          <div class="row g-lg-5">#}
             <div class="col-md-6 col-xl-4 mb-4">
               <div class="room-item rounded-4 ">
                 <img src="images/room1.jpg" alt="img" class="img-fluid rounded-4">
@@ -57,7 +59,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <a href="room-details.html">
+                <a href="{% url 'retreat' retreat_name='google'%}">
                   <p class="text-decoration-underline mt-3">Browse More</p>
                 </a>
               </div>
@@ -97,7 +99,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <a href="room-details.html">
+                <a href="retreats-details.html">
                   <p class="text-decoration-underline mt-3">Browse More</p>
                 </a>
               </div>
@@ -137,7 +139,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <a href="room-details.html">
+                <a href="retreats-details.html">
                   <p class="text-decoration-underline mt-3">Browse More</p>
                 </a>
               </div>
@@ -177,7 +179,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <a href="room-details.html">
+                <a href="retreats-details.html">
                   <p class="text-decoration-underline mt-3">Browse More</p>
                 </a>
               </div>
@@ -217,7 +219,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <a href="room-details.html">
+                <a href="retreats-details.html">
                   <p class="text-decoration-underline mt-3">Browse More</p>
                 </a>
               </div>
@@ -257,7 +259,7 @@
                     </tr>
                   </tbody>
                 </table>
-                <a href="room-details.html">
+                <a href="retreats-details.html">
                   <p class="text-decoration-underline mt-3">Browse More</p>
                 </a>
               </div>
