@@ -69,6 +69,7 @@ TEMPLATES = [
     },
 ]
 
+# was WSGI_APPLICATION = 'nimowelness.wsgi.application'
 WSGI_APPLICATION = 'nimowelness.wsgi.application'
 
 # STATICFILES_DIRS = [BASE_DIR / "static",]
