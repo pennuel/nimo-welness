@@ -5,9 +5,9 @@
 <head>
 
   <title>Nimo wellness
-      {% block title %}
-          - Home
-      {% endblock %}
+    {% block title %}
+    - Home
+    {% endblock %}
   </title>
 
   <meta charset="utf-8">
@@ -20,10 +20,10 @@
   <meta name="description" content="">
 
   <!--Bootstrap ================================================== -->
-  <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static " css/bootstrap.min.css" %}">
 
   <!--vendor css ================================================== -->
-  <link rel="stylesheet" type="text/css" href="{% static "css/vendor.css" %}css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="{% static " css/vendor.css" %}css/vendor.css">
 
   <!--Link Swiper's CSS ================================================== -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -32,7 +32,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Style Sheet ================================================== -->
-  <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static " css/style.css" %}">
 
   <!-- Google Fonts ================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -250,7 +250,7 @@
     </nav>
     <nav id="primary-header" class="navbar navbar-expand-lg py-4">
       <div class="container-fluid padding-side">
-        <div class="d-flex justify-content-between align-items-center w-100 " >
+        <div class="d-flex justify-content-between align-items-center w-100 ">
           <a class="navbar-brand" href="/" style="margin-top: -5vh;">
             <img src="/static/images/nimo/nimo.png" class="logo img-fluid" style="height: 8vw; width: auto;">
           </a>
@@ -268,7 +268,8 @@
             <div class="offcanvas-body align-items-center justify-content-center">
               <div class="search d-block d-lg-none m-5">
                 <form class=" position-relative">
-                  <input type="text" class="form-control bg-secondary border-0 rounded-5 px-4 py-2" placeholder="Search...">
+                  <input type="text" class="form-control bg-secondary border-0 rounded-5 px-4 py-2"
+                    placeholder="Search...">
                   <a href="#" class="position-absolute top-50 end-0 translate-middle-y p-1 me-3">
                     <svg class="" width="20" height="20">
                       <use xlink:href="#search"></use>
@@ -276,59 +277,62 @@
                   </a>
                 </form>
               </div>
-              <ul class="navbar-nav align-items-center mb-2 mb-lg-0" >
+              <ul class="navbar-nav align-items-center mb-2 mb-lg-0">
                 <li class="nav-item px-3">
                   <a class="nav-link active p-0" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item px-3">
-                  <a class="nav-link p-0" href="{% url 'about' %}">About</a>
+                  <a class="nav-link p-0" href="/about">About</a>
+                </li>
+                <li class="nav-item px-3">
+                  <a class="nav-link p-0" href="/services">Services</a>
                 </li>
                 <li class="nav-item px-3">
                   <a class="nav-link p-0" href="{% url 'retreats' %}">Retreats</a>
                 </li>
-{#                <li class="nav-item px-3">#}
-{#                  <a class="nav-link p-0" href="blog.html">Blog</a>#}
-{#                </li>#}
+                {# <li class="nav-item px-3">#}
+                  {# <a class="nav-link p-0" href="blog.html">Blog</a>#}
+                  {# </li>#}
                 <li class="nav-item px-3">
-                  <a class="nav-link p-0" href="{% url 'contact' %}">Contact</a>
+                  <a class="nav-link p-0" href="/contact">Contact</a>
                 </li>
-{#                <li class="nav-item px-3 dropdown">#}
-{#                  <a class="nav-link p-0 dropdown-toggle text-center " data-bs-toggle="dropdown" href="#" role="button"#}
-{#                    aria-expanded="false">Pages</a>#}
-{#                  <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 shadow">#}
-{#                    <li><a href="about/" class="dropdown-item ">About <span#}
-{#                          class="badge bg-primary">Pro</span></a></li>#}
-{#                    <li><a href="retreats.html" class="dropdown-item ">Room <span#}
-{#                      class="badge bg-primary">Pro</span></a></li>#}
-{#                    <li><a href="retreats-details.html" class="dropdown-item">Room-Details#}
-{#                        <span class="badge bg-primary">Pro</span></a></li>#}
-{#                    <li><a href="blog.html" class="dropdown-item ">Blog <span#}
-{#                          class="badge bg-primary">Pro</span></a></li>#}
-{#                    <li><a href="blog-single.html" class="dropdown-item ">Blog-Single <span#}
-{#                          class="badge bg-primary">Pro</span></a></li>#}
-{#                    <li><a href="services.html" class="dropdown-item ">Services <span#}
-{#                          class="badge bg-primary">Pro</span></a></li>#}
-{#                    <li><a href="service-details.html" class="dropdown-item ">Service-Details#}
-{#                        <span class="badge bg-primary">Pro</span></a></li>#}
-{#                    <li><a href="booking.html" class="dropdown-item ">Booking <span#}
-{#                      class="badge bg-primary">Pro</span></a></li>#}
-{#                    <li><a href="gallery.html" class="dropdown-item ">Gallery <span#}
-{#                          class="badge bg-primary">Pro</span></a></li>#}
-{#                    <li><a href="contact.html" class="dropdown-item ">Contact <span#}
-{#                          class="badge bg-primary">Pro</span></a></li>#}
-{#                    <li><a href="team.html" class="dropdown-item ">Team <span#}
-{#                          class="badge bg-primary">Pro</span></a></li>#}
-{#                    <li><a href="review.html" class="dropdown-item ">Reviews <span#}
-{#                          class="badge bg-primary">Pro</span></a></li>#}
-{#                    <li><a href="faq.html" class="dropdown-item ">FAQs <span#}
-{#                          class="badge bg-primary">Pro</span></a></li>#}
-{#                  </ul>#}
-{#                </li>#}
+                {# <li class="nav-item px-3 dropdown">#}
+                  {# <a class="nav-link p-0 dropdown-toggle text-center " data-bs-toggle="dropdown" href="#"
+                    role="button" #} {# aria-expanded="false">Pages</a>#}
+                  {# <ul class="dropdown-menu dropdown-menu-end animate slide mt-3 border-0 shadow">#}
+                    {# <li><a href="about/" class="dropdown-item ">About <span#} {# class="badge bg-primary">
+                          Pro</span></a></li>#}
+                    {# <li><a href="retreats.html" class="dropdown-item ">Room <span#} {# class="badge bg-primary">
+                          Pro</span></a></li>#}
+                    {# <li><a href="retreats-details.html" class="dropdown-item">Room-Details#}
+                        {# <span class="badge bg-primary">Pro</span></a></li>#}
+                    {# <li><a href="blog.html" class="dropdown-item ">Blog <span#} {# class="badge bg-primary">
+                          Pro</span></a></li>#}
+                    {# <li><a href="blog-single.html" class="dropdown-item ">Blog-Single <span#} {#
+                          class="badge bg-primary">Pro</span></a></li>#}
+                    {# <li><a href="services.html" class="dropdown-item ">Services <span#} {# class="badge bg-primary">
+                          Pro</span></a></li>#}
+                    {# <li><a href="service-details.html" class="dropdown-item ">Service-Details#}
+                        {# <span class="badge bg-primary">Pro</span></a></li>#}
+                    {# <li><a href="booking.html" class="dropdown-item ">Booking <span#} {# class="badge bg-primary">
+                          Pro</span></a></li>#}
+                    {# <li><a href="gallery.html" class="dropdown-item ">Gallery <span#} {# class="badge bg-primary">
+                          Pro</span></a></li>#}
+                    {# <li><a href="contact.html" class="dropdown-item ">Contact <span#} {# class="badge bg-primary">
+                          Pro</span></a></li>#}
+                    {# <li><a href="team.html" class="dropdown-item ">Team <span#} {# class="badge bg-primary">
+                          Pro</span></a></li>#}
+                    {# <li><a href="review.html" class="dropdown-item ">Reviews <span#} {# class="badge bg-primary">
+                          Pro</span></a></li>#}
+                    {# <li><a href="faq.html" class="dropdown-item ">FAQs <span#} {# class="badge bg-primary">
+                          Pro</span></a></li>#}
+                    {# </ul>#}
+                  {# </li>#}
 
               </ul>
             </div>
           </div>
-{#            add the search page#}
+          {# add the search page#}
           <div class="search d-lg-block d-none">
             <form class=" position-relative">
               <input type="text" class="form-control bg-secondary border-0 rounded-5 px-4 py-2" placeholder="Search...">
@@ -344,53 +348,54 @@
     </nav>
   </header>
 
-      {% block content %}
+  {% block content %}
 
-      {% endblock %}
+  {% endblock %}
 
   <section id="footer">
     <div class="container-fluid padding-side padding-small pt-0" data-aos="fade-up">
       <footer class="row">
         <div class="col-md-6 col-lg-3 mb-4 mb-lg-0 ">
-          <img src="/static/images/nimowellness1080transparent-11@2x.png" alt="logo-footer" class="img-fluid"  style="margin-left: -6vw;">
-          <p class="mt-3">Welcome to Nimo Wellness, where holistic wellness transforms lives.</p>
-            <ul class="social-links d-flex flex-wrap list-unstyled mt-4 mb-0">
-              <li>
-                <a href="#">
-                  <svg class="social me-4" width="20" height="20">
-                    <use xlink:href="#facebook"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <svg class="social me-4" width="20" height="20">
-                    <use xlink:href="#twitter"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <svg class="social me-4" width="20" height="20">
-                    <use xlink:href="#linkedin"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <svg class="social me-4" width="20" height="20">
-                    <use xlink:href="#instagram"></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <svg class="social me-4" width="20" height="20">
-                    <use xlink:href="#youtube"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
+          <img src="/static/images/nimowellness1080transparent-11@2x.png" alt="logo-footer" class="img-fluid"
+            style="margin-left: -6vw;">
+          <p class="mt-3">Welcome to Nimo Wellness, where holistic wellness transforms lives. </p>
+          <ul class="social-links d-flex flex-wrap list-unstyled mt-4 mb-0">
+            <li>
+              <a href="#">
+                <svg class="social me-4" width="20" height="20">
+                  <use xlink:href="#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg class="social me-4" width="20" height="20">
+                  <use xlink:href="#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg class="social me-4" width="20" height="20">
+                  <use xlink:href="#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg class="social me-4" width="20" height="20">
+                  <use xlink:href="#instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <svg class="social me-4" width="20" height="20">
+                  <use xlink:href="#youtube"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="col-md-6 col-lg-3 offset-lg-1 mb-4 mb-lg-0">
           <h4 class="display-6 fw-normal">Join Our Newsletter</h4>
@@ -407,7 +412,7 @@
             </div>
           </form>
         </div>
-        <div class="col-md-6 col-lg-3 offset-lg-1 mb-4 mb-lg-0">
+        <div class="col-md-6 col-lg-3 offset-lg-1  mb-lg-0">
           <h4 class="display-6 fw-normal">Our Info</h4>
           <ul class="nav flex-column">
             <li class="location text-capitalize d-flex align-items-center">
@@ -436,40 +441,39 @@
             </li>
           </ul>
         </div>
+        {# <div class="col-md-6 col-lg-3 offset-lg-1 mb-4 mb-lg-0">#}
+          {# <h4 class="display-6 fw-normal">Quick links</h4>#}
+          {# <ul class="nav flex-column">#}
+            {# <li class="nav-item"><a href="#" class="p-0 "> Home </a></li>#}
+            {# <li class="nav-item"><a href="{% url 'about' %}" class="p-0 "> About us </a></li>#}
+            {# <li class="nav-item"><a href="{% url 'contact' %}" class="p-0 "> Our Services </a></li>#}
+            {# <li class="nav-item"><a href="#" class="p-0 "> Privacy Policy</a></li>#}
+            {# <li class="nav-item"><a href="#" class="p-0 "> Contact us </a></li>#}
+            {# <li class="nav-item"><a href="#" class="p-0 "> Support </a></li>#}
+            {# </ul>#}
+          {# </div>#}
+        {# <div class="col-md-6 col-lg-3 offset-lg-1 mb-4 mb-lg-0">#}
+          {# <h4 class="display-6 fw-normal">Services</h4>#}
+          {# <ul class="nav flex-column">#}
+            {# <li class="nav-item"><a href="#" class="p-0 "> Dining </a></li>#}
+            {# <li class="nav-item"><a href="#" class="p-0 "> Pool </a></li>#}
+            {# <li class="nav-item"><a href="#" class="p-0 "> Yoga </a></li>#}
+            {# <li class="nav-item"><a href="#" class="p-0 "> Gym</a></li>#}
+            {# <li class="nav-item"><a href="#" class="p-0 "> News </a></li>#}
+            {# <li class="nav-item"><a href="#" class="p-0 "> Terms & Conditions </a></li>#}
+            {# </ul>#}
+          {# </div>#}
       </footer>
     </div>
     <hr class="text-black">
-{#    <div class="container-fluid padding-side padding-small" data-aos="fade-up">#}
-{#      <footer class="row">#}
-{#        <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">#}
-{#          <h4 class="display-6 fw-normal">Quick links</h4>#}
-{#          <ul class="nav flex-column">#}
-{#            <li class="nav-item"><a href="#" class="p-0 "> Home </a></li>#}
-{#            <li class="nav-item"><a href="#" class="p-0 "> About us </a></li>#}
-{#            <li class="nav-item"><a href="#" class="p-0 "> Our Services </a></li>#}
-{#            <li class="nav-item"><a href="#" class="p-0 "> Privacy Policy</a></li>#}
-{#            <li class="nav-item"><a href="#" class="p-0 "> Contact us </a></li>#}
-{#            <li class="nav-item"><a href="#" class="p-0 "> Support </a></li>#}
-{#          </ul>#}
-{#        </div>#}
-{#        <div class="col-md-6 col-lg-3 offset-lg-1 mb-4 mb-lg-0">#}
-{#          <h4 class="display-6 fw-normal">Services</h4>#}
-{#          <ul class="nav flex-column">#}
-{#            <li class="nav-item"><a href="#" class="p-0 "> Spa </a></li>#}
-{#            <li class="nav-item"><a href="#" class="p-0 "> Pool </a></li>#}
-{#            <li class="nav-item"><a href="#" class="p-0 "> Yoga </a></li>#}
-{#            <li class="nav-item"><a href="#" class="p-0 "> Gym</a></li>#}
-{#            <li class="nav-item"><a href="#" class="p-0 "> News </a></li>#}
-{#            <li class="nav-item"><a href="#" class="p-0 "> Terms & Conditions </a></li>#}
-{#          </ul>#}
-{#        </div>#}
-{#        <div class="col-md-6 col-lg-3 offset-lg-1 mb-4 mb-lg-0">#}
-{#          <p class="m-0">© Copyright 2024 Hotel Mellow. </p>#}
-{#          <p>Free Website Template:<a href="https://templatesjungle.com/" class="text-decoration-underline"#}
-{#            target="_blank">TemplatesJungle</a></p>#}
-{#        </div>#}
-{#      </footer>#}
-{#    </div>#}
+    <div data-aos="fade-up">
+      <footer class="row">
+
+        <div class=" col-lg-3 offset-lg-1 ">
+          <p class="">© Copyright 2024 nimo wellness </p>
+        </div>
+      </footer>
+    </div>
   </section>
 
   <script src="/static/js/jquery-1.11.0.min.js"></script>
@@ -479,9 +483,9 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script type="text/javascript" src="/static/js/script.js"></script>
   <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-{% block scripts %}
+  {% block scripts %}
 
-{% endblock %}
+  {% endblock %}
 </body>
 
 </html>
