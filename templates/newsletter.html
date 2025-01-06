@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Newsletter Subscription</title>
+    <!-- Include Bootstrap CSS -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:800">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+        font-family: 'Open Sans', sans-serif;
+    }
+    .modal-newsletter {	
+        color: #9f9f9f;
+        width: 525px;
+        font-size: 15px;
+    }		
+    .modal-newsletter .modal-content {
+        padding: 40px 50px;
+        border-radius: 1px;		
+        border: none;
+    }
+    .modal-newsletter .modal-header {
+        border-bottom: none;   
+        position: relative;
+        text-align: center;
+        border-radius: 5px 5px 0 0;
+    }
+    .modal-newsletter h4 {
+        color: #000;
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 800;
+        font-size: 30px;
+        margin: 0;		
+        text-transform: uppercase;
+    }	
+    .modal-newsletter .close {
+        position: absolute;
+        top: -25px;
+        right: -35px;
+        color: #c0c3c8;
+        text-shadow: none;
+        opacity: 0.5;
+        font-size: 26px;
+        font-weight: normal;
+    }
+    .modal-newsletter .close:hover {
+        opacity: 0.8;
+    }
+    .modal-newsletter .form-control, .modal-newsletter .btn {
+        min-height: 46px;
+        text-align: center;
+        border-radius: 1px; 
+    }
+    .modal-newsletter .form-control {
+        box-shadow: none;
+        background: #f5f5f5;
+        border-color: #d5d5d5;
+    }
+    .modal-newsletter .form-control:focus {
+        border-color: #ccc;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+    .modal-newsletter .btn {
+        color: #fff;
+        background: #353535;
+        text-decoration: none;
+        transition: all 0.4s;
+        line-height: normal;
+        padding: 6px 20px;
+        border: none;
+        margin-top: 20px;
+        font-family: 'Raleway', sans-serif;
+        text-transform: uppercase;
+    }
+    .modal-newsletter .btn:hover, .modal-newsletter .btn:focus {
+        background: #171717;
+        outline: none;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    }
+    .modal-newsletter .form-group {
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+    .modal-newsletter .footer-link{
+        margin-top: 20px;
+        min-height: 25px;
+    }
+    .modal-newsletter .footer-link a {
+        color: #353535;
+        display: inline-block;
+        border-bottom: 2px solid;
+        font-weight: bold;
+        text-align: center;		
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    .modal-newsletter .footer-link a:hover, .modal-newsletter .footer-link a:focus {
+        text-decoration: none;
+        border: none;
+    }
+    .hint-text {
+        margin: 100px auto;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+
+   
+
+<!-- Modal for Newsletter --><div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-newsletter">
+            <div class="modal-header">
+                
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="newsletter-form" method="post" action="{% url 'subscribe' %}">
+                    {% csrf_token %}
+                    <div class="modal-header">
+                        <h4>Join Our Newsletter</h4>
+                        
+                            
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p>Subscribe to our newsletter to receive the latest news and exclusive offers every week. No spam.</p>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Enter your email" required>
+                            <input type="submit" class="btn btn-primary btn-block" value="Subscribe">
+                        </div>
+                        <div class="footer-link">
+                            <a href="#">No Thanks</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!----Success Modal---->
+<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">Success</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        
+                    </div>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Subscription successful!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+		
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#newsletter-form').on('submit', function(event) {
+            event.preventDefault();
+            $.ajax({
+                url: $(this).attr('action'),
+                type: $(this).attr('method'),
+                data: $(this).serialize(),
+                success: function(response) {
+                    if (response.success) {
+                        $('#success-modal').show();
+                    } else {
+                        alert('Subscription failed: ' + JSON.stringify(response.errors));
+                    }
+                },
+                error: function() {
+                    alert('An error occurred. Please try again.');
+                }
+            });
+        });
+
+        $('#close-modal').on('click', function() {
+            $('#success-modal').hide();
+        });
+    });
+</script>
+ <!-- JavaScript to show modal on page load -->
+<script>
+    document.addEventListener('DOMContentLoaded',function() {
+        setTimeout(function(){
+            $('#subscribeModal').modal('show');
+        }, 3000);
+        });
+       
+</script>
+</body>
+
+</html>
