@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}About Us{% endblock %}
 
@@ -6,10 +7,10 @@
   <section id="slider" data-aos="fade-up">
     <div class="container-fluid padding-side" >
       <div class="d-flex rounded-5"
-        style="background-image: url(images/slider-image1.jpg); background-size: cover; background-repeat: no-repeat; height: 50vh; background-position: center;">
+        style="background-image: url(/static/images/slider-image1.jpg); background-size: cover; background-repeat: no-repeat; height: 50vh; background-position: center;">
           <div class="row align-items-center m-auto">
             <div class="d-flex flex-wrap flex-column justify-content-center align-items-center">
-              <h2 class="display-1 fw-normal">About Us</h2>
+              <h2 class="display-1 fw-normal">WHO WE ARE</h2>
               <nav class="breadcrumb">
                 <a class="breadcrumb-item" href="index.html">Home</a>
                 <span class="breadcrumb-item active" aria-current="page">About Us</span>
@@ -20,103 +21,55 @@
     </div>
   </section>
 
-  <section id="about-us" class="padding-medium">
+    <section id="about-us" class="padding-medium">
     <div class="vertical-element">
-      <div class="container-fluid padding-side">
-        <div class="row d-flex align-items-center">
-          <div class="col-lg-6">
-            <div class="image-holder">
-              <img src="images/item1.jpg" alt="about-us" class="img-fluid rounded-4">
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="section-element p-5">
-              <h3 class="display-3 fw-normal">Who are we?</h3>
-              <p>The beginning of our journey vel tellus Turpis purus, gravida orci, fringilla a. Ac
-                sed
-                eu fringilla odio mi. Consequat pharetra at magna imperdiet cursus ac faucibus sit
-                libero. Ultricies quam nunc, lorem sit lorem urna, pretium aliquam ut. In vel, quis
-                donec dolor id in. Pulvinar commodo mollis diam sed facilisis at magna imperdiet
-                cursus
-                ac faucibus sit libero.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="vertical-element mt-md-5 py-md-5">
-      <div class="container-fluid padding-side">
+         <div class="container-fluid padding-side">
         <div class="row flex-row-reverse align-items-center">
           <div class="col-lg-6">
             <div class="image-holder text-right">
-              <img src="images/item3.jpg" alt="about-us" class="img-fluid rounded-4">
+              <img src={% static "images/item3.jpg" %} alt="about-us" class="img-fluid rounded-4">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="section-element p-2">
+              <h3 class="display-3 fw-normal">We Transform Lives Together</h3>
+              <p>
+                  The Journey of Wellness and Healing is a journey of rediscovery, a journey of transformation, a journey of self-love and self-care. </p>
+                <p>
+                    At Nimo Wellness, we believe in the power of holistic wellness to transform lives. Our approach is rooted in the philosophy that every individual is unique and requires personalized care.
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="vertical-element mt-md-3 py-md-3">
+     <div class="container-fluid padding-side">
+        <div class="row d-flex align-items-center">
+          <div class="col-lg-6">
+            <div class="image-holder">
+              <img src={% static "images/nimo/relaxed.JPG" %} alt="meet_the_host" class="img-fluid rounded-4">
             </div>
           </div>
           <div class="col-lg-6">
             <div class="section-element p-5">
-              <h3 class="display-3 fw-normal">Choose us for best services</h3>
-              <p>We are nunc, lorem sit lorem urna, pretium aliquam ut. In vel, quis donec dolor id
-                in.
-                Pulvinar commodo mollis diam sed facilisis at magna imperdiet cursus ac faucibus sit
-                libero. Dignissim lacus, turpis ut suspendisse vel tellus. Turpis purus, gravida
-                orci,
-                fringilla a. Ac sed eu fringilla odio mi. Consequat pharetra at magna imperdiet
-                cursus
-                ac faucibus sit libero.</p>
+              <h3 class="display-3 fw-normal">Meet the Host</h3>
+              <p>
+                    Hello, I'm Nimo, founder of Nimo Wellness. My journey, rooted in Kenya's vibrant landscapes, has woven a tapestry of cultures, adventures, and personal quests for healing.
+                  Traveling to over 35 countries fueled my curiosity and growth, yet amidst exploration, I faced postpartum depression, igniting my purpose.
+                  Drawing on my nursing background and wellness coaching, I embraced holistic wellness, realizing it as my calling.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <section id="info">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3 text-center mb-4 mb-lg-0">
-          <h3 class="display-1 fw-normal text-primary position-relative">25K <span
-              class="position-absolute top-50 end-50 translate-middle z-n1 ps-lg-4 pt-lg-4"><img src="images/pattern1.png"
-                alt="pattern" class="img-fluid"></span></h3>
-          <p class="text-capitalize">Happy Customer</p>
-        </div>
-        <div class="col-md-3 text-center mb-4 mb-lg-0">
-          <h3 class="display-1 fw-normal text-primary position-relative">160 <span
-              class="position-absolute top-50 translate-middle z-n1"><img src="images/pattern1.png" alt="pattern"
-                class="img-fluid"></span></h3>
-          <p class="text-capitalize">Total Rooms</p>
-        </div>
-        <div class="col-md-3 text-center mb-4 mb-lg-0">
-          <h3 class="display-1 fw-normal text-primary position-relative">25 <span
-              class="position-absolute top-100 pb-5 translate-middle z-n1"><img src="images/pattern1.png" alt="pattern"
-                class="img-fluid"></span></h3>
-          <p class="text-capitalize">award wins</p>
-        </div>
-        <div class="col-md-3 text-center mb-4 mb-lg-0">
-          <h3 class="display-1 fw-normal text-primary position-relative">200 <span
-              class="position-absolute top-50 end-50 pb-lg-4 pe-lg-2 translate-middle z-n1"><img src="images/pattern1.png"
-                alt="pattern" class="img-fluid"></span></h3>
-          <p class="text-capitalize">Total Members</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="vid" class="padding-medium">
-    <div class="container-fluid padding-side">
-      <h3 class="display-3 fw-normal text-center">View our Hotel</h3>
-      <div class="imageblock me-4 position-relative mt-5">
-        <img class="img-fluid" src="images/video.jpg" alt="img">
-        <a type="button" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/W_tIumKa8VY"
-          data-bs-target="#myModal" class="play-btn position-absolute top-50 start-50 translate-middle">
-          <svg class="play-icon" width="70" height="70">
-            <use xlink:href="#play"></use>
-          </svg>
-        </a>
-      </div>
-    </div>
-  </section>
 
+  </section
   <!-- Video Popup -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -139,4 +92,114 @@
 
     </div>
   </div>
+<section id="about-us" class="padding-large">
+        <div class="container-fluid padding-side" data-aos="fade-up">
+            <h3 class="display-3 text-center fw-normal col-lg-4 offset-lg-4">Our Mission</h3>
+            <div class="row align-items-start mt-3 mt-lg-5">
+                <div class="col-lg-6">
+                    <div class="p-5">
+                        <p>
+                           At Nimo, We want to help you rebuild your physical, mental, emotional, and social well-being.
+                        </p>
+                        <p>
+                            Our focus is to help you discover your inner Radiance and address the root cause of your health concerns and challenges.
+                        </p>
+                        <p>
+
+                            Through our Mind, Body, Spirit focused Retreats,
+                            <br>
+                            We help you Reset, Refocus, Re-adjust, and Restart the Inner you empowering you to live a life of vitality, joy, and purpose.
+                        </p>
+                    </div>
+                    <img src="/static/images/nimo/yoga_outside.webp" alt="img" class="img-fluid rounded-4 mt-4">
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <img src="/static/images/nimo/laughing.webp" alt="img" class="img-fluid rounded-4">
+                    <img src="/static/images/nimo/lady_healing_cropped(1)(1)(1)(1).png" alt="img" class="img-fluid rounded-4 mt-4 mx-5">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+{#  <section id="info">#}
+{#    <div class="container">#}
+{#      <div class="row">#}
+{#        <div class="col-md-3 text-center mb-4 mb-lg-0">#}
+{#          <h3 class="display-1 fw-normal text-primary position-relative">25K <span#}
+{#              class="position-absolute top-50 end-50 translate-middle z-n1 ps-lg-4 pt-lg-4"><img src="images/pattern1.png"#}
+{#                alt="pattern" class="img-fluid"></span></h3>#}
+{#          <p class="text-capitalize">Happy Customer</p>#}
+{#        </div>#}
+{#        <div class="col-md-3 text-center mb-4 mb-lg-0">#}
+{#          <h3 class="display-1 fw-normal text-primary position-relative">160 <span#}
+{#              class="position-absolute top-50 translate-middle z-n1"><img src="images/pattern1.png" alt="pattern"#}
+{#                class="img-fluid"></span></h3>#}
+{#          <p class="text-capitalize">Total Rooms</p>#}
+{#        </div>#}
+{#        <div class="col-md-3 text-center mb-4 mb-lg-0">#}
+{#          <h3 class="display-1 fw-normal text-primary position-relative">25 <span#}
+{#              class="position-absolute top-100 pb-5 translate-middle z-n1"><img src="images/pattern1.png" alt="pattern"#}
+{#                class="img-fluid"></span></h3>#}
+{#          <p class="text-capitalize">award wins</p>#}
+{#        </div>#}
+{#        <div class="col-md-3 text-center mb-4 mb-lg-0">#}
+{#          <h3 class="display-1 fw-normal text-primary position-relative">200 <span#}
+{#              class="position-absolute top-50 end-50 pb-lg-4 pe-lg-2 translate-middle z-n1"><img src="images/pattern1.png"#}
+{#                alt="pattern" class="img-fluid"></span></h3>#}
+{#          <p class="text-capitalize">Total Members</p>#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#  </section>#}
+
+  <section id="vid" class="padding-medium">
+    <div class="container-fluid padding-side">
+      <h3 class="display-3 fw-normal text-center">View our success</h3>
+      <div class="imageblock me-4 position-relative mt-5">
+        <img class="img-fluid" src="/static/images/video.jpg" alt="img">
+        <a type="button" data-bs-toggle="modal" data-src="https://youtu.be/65snrWJTNDU"
+          data-bs-target="#myModal" class="play-btn position-absolute top-50 start-50 translate-middle">
+          <svg class="play-icon" width="70" height="70">
+            <use xlink:href="#play"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+
   {% endblock %}
+
+{#<section id="info">#}
+{#    <div class="container">#}
+{#      <div class="row">#}
+{#        <div class="col-md-3 text-center mb-4 mb-lg-0">#}
+{#          <h3 class="display-1 fw-normal text-primary position-relative">25K <span#}
+{#              class="position-absolute top-50 end-50 translate-middle z-n1 ps-lg-4 pt-lg-4"><img src={% static "images/pattern1.png" %}#}
+{#                alt="pattern" class="img-fluid"></span></h3>#}
+{#          <p class="text-capitalize">Happy Customer</p>#}
+{#        </div>#}
+{#        <div class="col-md-3 text-center mb-4 mb-lg-0">#}
+{#          <h3 class="display-1 fw-normal text-primary position-relative">160 <span#}
+{#              class="position-absolute top-50 translate-middle z-n1"><img src={% static "images/pattern1.png" %} alt="pattern"#}
+{#                class="img-fluid"></span></h3>#}
+{#          <p class="text-capitalize">Total Rooms</p>#}
+{#        </div>#}
+{#        <div class="col-md-3 text-center mb-4 mb-lg-0">#}
+{#          <h3 class="display-1 fw-normal text-primary position-relative">25 <span#}
+{#              class="position-absolute top-100 pb-5 translate-middle z-n1"><img src={% static "images/pattern1.png" %} alt="pattern"#}
+{#                class="img-fluid"></span></h3>#}
+{#          <p class="text-capitalize">award wins</p>#}
+{#        </div>#}
+{#        <div class="col-md-3 text-center mb-4 mb-lg-0">#}
+{#          <h3 class="display-1 fw-normal text-primary position-relative">200 <span#}
+{#              class="position-absolute top-50 end-50 pb-lg-4 pe-lg-2 translate-middle z-n1"><img src={% static "images/pattern1.png" %}#}
+{#                alt="pattern" class="img-fluid"></span></h3>#}
+{#          <p class="text-capitalize">Total Members</p>#}
+{#        </div>#}
+{#      </div>#}
+{#    </div>#}
+{#  </section>#}
