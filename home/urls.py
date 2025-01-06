@@ -14,6 +14,6 @@ urlpatterns = [
     path('retreats/<str:retreat_name>/', views.retreat, name='retreat'),
     path ('rooms/', views.rooms, name='rooms'),
     path('newletter/', newsletter_view, name='news_letter'),
-    path('subscribe/', handle_newsletter_subscription, name='subscribe')
-    path('rooms/', views.rooms, name='rooms'),
+    path('subscribe/', handle_newsletter_subscription, name='subscribe'),
+
 ]
