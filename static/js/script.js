@@ -58,6 +58,25 @@
       effect: "fade",
     });
 
+        var roomSwiper = new Swiper(".room-retreat-swiper", {
+      slidesPerView: 2, spaceBetween: 10,
+      pagination: {
+        el: ".room-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        1024: {
+          slidesPerView: 2,
+        },
+        1280: {
+          slidesPerView: 3,
+        },
+      },
+    });
+
     var roomSwiper = new Swiper(".room-swiper", {
       slidesPerView: 3,
       spaceBetween: 20,
