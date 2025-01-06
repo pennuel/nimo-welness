@@ -8,7 +8,9 @@
 {% block content %}
 
 <!------newsletter--------->
-{% include 'newsletter.html' %}
+    {% include 'newsletter.html' %}
+
+
 <!------success modal------->
 <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -26,39 +28,8 @@
         </div>
     </div>
 </div>
-<!----end of success modal----->
-<!------Javascript------->
-<!-- JavaScript -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const form = document.querySelector('#newsletterForm');
+    <!----end of success modal----->
 
-        form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent default form submission
-
-            const formData = new FormData(form);
-
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                },
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    if (data.success) {
-                        $('#successModal').modal('show'); // Show success modal
-                    } else {
-                        console.error('Form submission failed', data.errors);
-                    }
-                })
-                .catch((error) => console.error('Error:', error));
-        });
-    });
-</script>
     <section id="slider" data-aos="fade-up" >
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
@@ -680,5 +651,37 @@
 
 {% block scripts %}
 
+<!------Javascript------->
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.querySelector('#newsletterForm');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    if (data.success) {
+                        $('#successModal').modal('show'); // Show success modal
+                    } else {
+                        console.error('Form submission failed', data.errors);
+                    }
+                })
+                .catch((error) => console.error('Error:', error));
+        });
+    });
+</script>
 
 {% endblock %}

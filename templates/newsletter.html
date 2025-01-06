@@ -1,25 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Newsletter Subscription</title>
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Newsletter Subscription</title>#}
     <!-- Include Bootstrap CSS -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:800">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-    body {
-        font-family: 'Open Sans', sans-serif;
-    }
+{#<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Raleway:800">#}
+{#<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">#}
+{#<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">#}
+{#<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">#}
+
+    {% block styles %}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">\
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+.modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
     .modal-newsletter {	
         color: #9f9f9f;
         width: 525px;
         font-size: 15px;
+
     }		
-    .modal-newsletter .modal-content {
+    .modal-newsletter {
         padding: 40px 50px;
         border-radius: 1px;		
+        border: none;
+    }
+    .modal-content{
+        padding: 40px 50px;
+        border-radius: 1px;
         border: none;
     }
     .modal-newsletter .modal-header {
@@ -41,10 +55,11 @@
         position: absolute;
         top: -25px;
         right: -35px;
-        color: #c0c3c8;
+        color: #4c4c4e;
         text-shadow: none;
-        opacity: 0.5;
+
         font-size: 26px;
+        border:none;
         font-weight: normal;
     }
     .modal-newsletter .close:hover {
@@ -98,6 +113,8 @@
         text-transform: uppercase;
         font-size: 14px;
     }
+
+
     .modal-newsletter .footer-link a:hover, .modal-newsletter .footer-link a:focus {
         text-decoration: none;
         border: none;
@@ -107,28 +124,22 @@
         text-align: center;
     }
     </style>
-</head>
-<body>
+{% endblock %}
+
 
    
 
-<!-- Modal for Newsletter --><div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="subscribeModalLabel" aria-hidden="true">
+<div class="modal fade" id="subscribeModal" tabindex="-1" aria-labelledby="subscribeModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content modal-newsletter">
+        <div class="modal-newsletter modal-content">
             <div class="modal-header">
-                
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form id="newsletter-form" method="post" action="{% url 'subscribe' %}">
                     {% csrf_token %}
                     <div class="modal-header">
                         <h4>Join Our Newsletter</h4>
-                        
-                            
-                        </button>
                     </div>
                     <div class="modal-body text-center">
                         <p>Subscribe to our newsletter to receive the latest news and exclusive offers every week. No spam.</p>
@@ -137,7 +148,7 @@
                             <input type="submit" class="btn btn-primary btn-block" value="Subscribe">
                         </div>
                         <div class="footer-link">
-                            <a href="#">No Thanks</a>
+                            <a data-bs-dismiss="modal" aria-label="Close">No Thanks</a>
                         </div>
                     </div>
                 </form>
@@ -146,20 +157,14 @@
     </div>
 </div>
 <!----Success Modal---->
-<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="successModalLabel">Success</h5>
-                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
-                    </div>
-                    <div class="modal-body text-center">
-                        
-                    </div>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body text-center">
                 <p>Subscription successful!</p>
             </div>
             <div class="modal-footer">
@@ -168,10 +173,16 @@
         </div>
     </div>
 </div>
+
+<!-- Modal for Newsletter -->
+
 		
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{#<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>#}
+{#<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>#}
+{#<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>#}
+{% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script>
     $(document).ready(function() {
         $('#newsletter-form').on('submit', function(event) {
@@ -207,6 +218,4 @@
         });
        
 </script>
-</body>
-
-</html>
+{% endblock %}
