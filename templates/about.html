@@ -69,17 +69,30 @@
 
 
 
-  </section
+  </section>
   <!-- Video Popup -->
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
-  {% endblock %}
+
+      <div class="modal-content">
+
+        <div class="modal-body">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><svg class="bi" width="40"
+              height="40">
+              <use xlink:href="#close-sharp"></use>
+            </svg></button>
+          <div class="ratio ratio-16x9">
+            <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+              allow="autoplay"></iframe>
+          </div>
+        </div>
 
       </div>
 
     </div>
   </div>
+
 <section id="about-us" class="padding-large">
         <div class="container-fluid padding-side" data-aos="fade-up">
             <h3 class="display-3 text-center fw-normal col-lg-4 offset-lg-4">Our Mission</h3>
@@ -146,7 +159,7 @@
       <h3 class="display-3 fw-normal text-center">View our success</h3>
       <div class="imageblock me-4 position-relative mt-5">
         <img class="img-fluid" src="/static/images/video.jpg" alt="img">
-        <a type="button" data-bs-toggle="modal" data-src="https://youtu.be/65snrWJTNDU"
+        <a type="button" data-bs-toggle="modal" data-src="https://www.youtube.com/watch?v=NJDoQajX-DQ"
           data-bs-target="#myModal" class="play-btn position-absolute top-50 start-50 translate-middle">
           <svg class="play-icon" width="70" height="70">
             <use xlink:href="#play"></use>
